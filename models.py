@@ -1,13 +1,12 @@
 from mongoengine import connect, Document, StringField, ReferenceField, ListField, CASCADE
 
-username = "alex"
-password = "FXAvNwD1BHLf6AdH"
-host = "oleksandr.jpirka4.mongodb.net"
-
-# uri = 'mongodb+srv://<username>:<password>@oleksandr.jpirka4.mongodb.net/'
-URI = f"mongodb+srv://{username}:{password}@{host}/"
-
-connect(db="Web-HW-8-1", host=URI)
+def connection():
+    username = "alex"
+    password = "FXAvNwD1BHLf6AdH"
+    host = "oleksandr.jpirka4.mongodb.net"
+    db_name = "Web-HW-8-1"
+    URI = f"mongodb+srv://{username}:{password}@{host}/{db_name}"
+    connect(host=URI)
 
 
 class Author(Document):

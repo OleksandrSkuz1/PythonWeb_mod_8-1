@@ -1,6 +1,9 @@
 import json
 from datetime import datetime
-from models import Author, Quote
+from models import connection, Author, Quote
+
+# Підключення до MongoDB
+connection()
 
 with open("authors.json", "r", encoding="utf-8") as file:
     authors_data = json.load(file)
